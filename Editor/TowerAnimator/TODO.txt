@@ -1,0 +1,36 @@
+﻿Primary Functionality
+    Prevent copy-paste from operating on the frame if one of the time pickers or RGB spinners is focused.
+    Allow copy-paste within time pickers and RGB spinners.
+
+Audio
+    visualize
+
+Additional Features
+	Include (here) from file
+
+Usability
+	undo/redo
+    Update color wheel selector position when changing active color?
+    Add new button functions to menu lists
+
+Polish
+    tooltips
+    tool arrangement
+    tab order
+    + button image clipping
+
+Tim's Desirables
+	timeline across top or bottom so it can scale
+	Randomize, with adjustable percentage of lit lights
+
+Code Cleanup
+    Separate file I/O by version number
+
+
+Quality Tests
+    Verify every file modification is noted and requires save prompt.
+    Verify all buttons work, even with strange sequence timings. (Particularly, verify TODOs.)
+    Verify all elements are properly anchored.
+    Verify audio playback starts at correct location (from first frame and middle frames).
+    Augment serial output to print to console -- verify all frames sent at correct time, and data is as expected.
+    Test time input parse errors.
