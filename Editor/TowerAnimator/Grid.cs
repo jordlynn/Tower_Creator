@@ -11,8 +11,8 @@ namespace TowerAnimator
 
         public Grid(int rows, int columns)
         {
-            this.rows = rows;
-            this.columns = columns;
+            this.rows = 1;
+            this.columns = 2;
 
             states = new List<List<Color>>();
             for (int row = 0; row < rows; ++row)
