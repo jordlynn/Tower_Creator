@@ -26,30 +26,36 @@ namespace TowerAnimator
 
         public Grid(int rows, int columns)
         {
-            this.rows = 12; // Hardcoding this in for Kibbie lights adjust back to "rows" as needed.
+            this.rows = 17; // Hardcoding this in for Kibbie lights adjust back to "rows" as needed.
             this.columns = 8; // same here adjust back to "columns" as needed.
 
             states = new List<List<Color>>();
 	/* Commenting this out it is currently tower lights code and will build a solid grid
-	    we need one with a hollow middle for the kibbie lights.
+	    we need one with a hollow middle for the kibbie lights. */
+            /*
             for (int row = 0; row < rows; ++row)
             {
                 states.Add(new List<Color>());
                 for (int col = 0; col < columns; ++col)
                     states[row].Add(Color.Black);
             }
-       */
+            */
+            
 			// Here I'm working on getting just a border for the grid instead of a whole rectangle,
 			// I achomplish this by going through each row and col but only giving values to the 
 			// ones that are either == to the begining row && col or end row && col.
-			for( int row = 0; row < rows; ++row ){ 
-				for( int col = 0; col < columns; ++col ){ 
-					if( row == 1 || r == rows || col == 1 || col == columns){
-						states.Add(new List<Color>());
-						states[row].Add(Color.Black)); 
-					}
+            
+			for( int row = 0; row < rows; ++row ){
+                states.Add(new List<Color>());
+				for( int col = 0; col < columns; ++col ){
+                    if (col == 0 || col == columns || row == 0 || row == rows){
+                        states[row].Add(Color.Black);
+                    }else{
+                        states[row].Add(Color.Black);
+                    }
 				}
 			}
+            
 	}
 
         public Grid(Grid other)

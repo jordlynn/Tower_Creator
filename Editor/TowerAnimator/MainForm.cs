@@ -180,6 +180,14 @@ namespace TowerAnimator
             SetFrameStartPickerEntries();
         }
 
+
+        // This is where edits need to happen for Kibbie dome lights and compile those animations.
+        // so far I've runn into the issue of the other side of the grid not being drawn. What I've
+        // changed is that instead of the whole 4 x 10 grid being drawn just column and row 0 get drawn
+        // along with numRows and numCols. Unfourtunatly numRows and numCols isn't working, I don't know why
+        // but the values getting passed in are larger than the displayed grid ( 0 -> 3 is the true value but
+        // the numRows and numCols operate on the 1 -> 4 method ) SO that means FOR NOW this will be hard coded
+        // I will also add a TODO to get this fixed. -Jordan Lynn 09/25/2013
         private void DrawGrid(Graphics g)
         {
             Grid currentGrid;
@@ -187,12 +195,15 @@ namespace TowerAnimator
             {
                 for (int col = 0; col < numCols; ++col)
                 {
-                    Rectangle tile = new Rectangle(col * pixelsPerTile, row * pixelsPerTile, pixelsPerTile, pixelsPerTile);
-                    currentGrid = grids[gridNum];
+                    if (col == 0 || col == 3 || row == 0 || row == 9)
+                    {
+                        Rectangle tile = new Rectangle(col * pixelsPerTile, row * pixelsPerTile, pixelsPerTile, pixelsPerTile);
+                        currentGrid = grids[gridNum];
 
-                    g.FillRectangle(new SolidBrush(Color.FromArgb(170, 123, 123)), tile); // TODO: make variable for hard-coded brick color
-                    tile.Inflate((int)(-pixelsPerTile * windowInflatePercent), (int)(-pixelsPerTile * windowInflatePercent));
-                    g.FillRectangle(new SolidBrush(currentGrid.Get(row, col)), tile);
+                        g.FillRectangle(new SolidBrush(Color.FromArgb(170, 123, 123)), tile); // TODO: make variable for hard-coded brick color
+                        tile.Inflate((int)(-pixelsPerTile * windowInflatePercent), (int)(-pixelsPerTile * windowInflatePercent));
+                        g.FillRectangle(new SolidBrush(currentGrid.Get(row, col)), tile);
+                    }
                 }
             }
         }
