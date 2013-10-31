@@ -1,0 +1,15 @@
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.csprojResolveAssemblyReference.cache
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.About.resources
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.MainForm.resources
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.csproj.GenerateResource.Cache
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\TowerAnimator.exe
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\TowerAnimator.pdb
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\NAudio.dll
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\NAudio.xml
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.Properties.Resources.resources
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.exe
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.pdb
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\TowerAnimator.exe.manifest
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\bin\Debug\TowerAnimator.application
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.exe.manifest
+\\VBOXSVR\Public\Tower_Creator\Editor\TowerAnimator\obj\x86\Debug\TowerAnimator.application
