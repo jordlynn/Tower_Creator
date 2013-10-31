@@ -59,7 +59,7 @@ namespace TowerAnimator
         /// Can be edited depending on Kibbie
         /// lights or Tower Lights.
         /// </summary>
-        int numRows = 19;
+        int numRows = 18;
 
         /// <summary>
         /// The number of columns of lights.
@@ -229,7 +229,7 @@ namespace TowerAnimator
                 {
                     for (int col = 0; col < numCols; ++col)
                     {
-                        if (col == 0 || col == 5 || row == 0 || row == 18)
+                        if (col == 0 || col == 4 || row == 0 || row == 17)
                         {
                             Rectangle tile = new Rectangle(xStart + col * tileSize, row * tileSize, tileSize, tileSize);
 
