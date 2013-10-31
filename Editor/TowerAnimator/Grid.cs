@@ -1,5 +1,5 @@
 ﻿/* Grid.cs
-				===== READ THIS! ====
+				                        ===== READ THIS! ====
 
 	Originally written by I'm assuming Josh Armstrong, now maintained by Jordan Lynn.
 this is currently in the works of being ported over the a *.tan file creator for the Kibbie
@@ -26,8 +26,8 @@ namespace TowerAnimator
 
         public Grid(int rows, int columns)
         {
-            this.rows = 17; // Hardcoding this in for Kibbie lights adjust back to "rows" as needed.
-            this.columns = 8; // same here adjust back to "columns" as needed.
+            this.rows = 19; // Hardcoding this in for Kibbie lights adjust back to "rows" as needed.
+            this.columns = 6; // same here adjust back to "columns" as needed.
 
             states = new List<List<Color>>();
 	/* Commenting this out it is currently tower lights code and will build a solid grid

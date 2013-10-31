@@ -56,13 +56,15 @@ namespace TowerAnimator
 
         /// <summary>
         /// The number of rows of lights.
+        /// Can be edited depending on Kibbie
+        /// lights or Tower Lights.
         /// </summary>
-        int numRows = 10;
+        int numRows = 19;
 
         /// <summary>
         /// The number of columns of lights.
         /// </summary>
-        int numCols = 4;
+        int numCols = 6;
 
         ColorWheel colorWheel = new ColorWheel(64);
         ColorPalette palette = new ColorPalette(16, 18);
@@ -181,22 +183,26 @@ namespace TowerAnimator
         }
 
 
-        // This is where edits need to happen for Kibbie dome lights and compile those animations.
-        // so far I've runn into the issue of the other side of the grid not being drawn. What I've
-        // changed is that instead of the whole 4 x 10 grid being drawn just column and row 0 get drawn
-        // along with numRows and numCols. Unfourtunatly numRows and numCols isn't working, I don't know why
-        // but the values getting passed in are larger than the displayed grid ( 0 -> 3 is the true value but
-        // the numRows and numCols operate on the 1 -> 4 method ) SO that means FOR NOW this will be hard coded
-        // I will also add a TODO to get this fixed. -Jordan Lynn 09/25/2013
+        /* This is where edits need to happen for Kibbie dome lights and compile those animations.
+         * so far I've runn into the issue of the other side of the grid not being drawn. What I've
+         * changed is that instead of the whole 4 x 10 grid being drawn just column and row 0 get drawn
+         * along with numRows and numCols. Unfourtunatly numRows and numCols isn't working, I don't know why
+         * but the values getting passed in are larger than the displayed grid ( 0 -> 3 is the true value but
+         * the numRows and numCols operate on the 1 -> 4 method ) SO that means FOR NOW this will be hard coded
+         * I will also add a TODO to get this fixed. -Jordan Lynn 09/25/2013
+         */
         private void DrawGrid(Graphics g)
         {
             Grid currentGrid;
+            int tempCol = numCols - 1; // These two temp variables just store a decremeanted value of the 
+            int tempRows = numRows - 1; // column and rows, used for initializing. For some reason it doesn't
+                                        // like to use the '--' operator.
             for (int row = 0; row < numRows; ++row)
             {
                 for (int col = 0; col < numCols; ++col)
                 {
-                    if (col == 0 || col == 3 || row == 0 || row == 9)
-                    {
+                    if (col == 0 || col == tempCol || row == 0 || row == tempRows){
+
                         Rectangle tile = new Rectangle(col * pixelsPerTile, row * pixelsPerTile, pixelsPerTile, pixelsPerTile);
                         currentGrid = grids[gridNum];
 
@@ -223,11 +229,14 @@ namespace TowerAnimator
                 {
                     for (int col = 0; col < numCols; ++col)
                     {
-                        Rectangle tile = new Rectangle(xStart + col * tileSize, row * tileSize, tileSize, tileSize);
+                        if (col == 0 || col == 5 || row == 0 || row == 18)
+                        {
+                            Rectangle tile = new Rectangle(xStart + col * tileSize, row * tileSize, tileSize, tileSize);
 
-                        g.FillRectangle(new SolidBrush(Color.FromArgb(170, 123, 123)), tile);
-                        tile.Inflate((int)(-tileSize * windowInflatePercent), (int)(-tileSize * windowInflatePercent));
-                        g.FillRectangle(new SolidBrush(grids[grid].Get(row, col)), tile);
+                            g.FillRectangle(new SolidBrush(Color.FromArgb(170, 123, 123)), tile);
+                            tile.Inflate((int)(-tileSize * windowInflatePercent), (int)(-tileSize * windowInflatePercent));
+                            g.FillRectangle(new SolidBrush(grids[grid].Get(row, col)), tile);
+                        }
                     }
                 }
 
